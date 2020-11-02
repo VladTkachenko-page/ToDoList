@@ -11,7 +11,8 @@ const render = function() {
   todoList.textContent = '';
   todoCompleted.textContent = '';
   localStorage.setItem('array', JSON.stringify(todoData));
-    arrayData.forEach(function(item) {
+  todoData = arrayData;
+    todoData.forEach(function(item) {
       
       const li = document.createElement('li');
       li.classList.add('todo-item');
