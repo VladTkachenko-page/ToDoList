@@ -5,12 +5,14 @@
        todoList = document.querySelector('.todo-list'),
        todoCompleted = document.querySelector('.todo-completed');
 
-let todoData = [];              
+let todoData;              
+console.log('todoData: ', todoData);
 
 const render = function() {
   todoList.textContent = '';
   todoCompleted.textContent = '';
   localStorage.setItem('array', JSON.stringify(todoData));
+  todoData = JSON.parse(localStorage.getItem('array'));  
   
     todoData.forEach(function(item) {
       
@@ -59,5 +61,4 @@ todoControl.addEventListener('submit', function(event){
       headerInput.value = '';
     }
   });
-  todoData = JSON.parse(localStorage.getItem('array'));  
   render();
