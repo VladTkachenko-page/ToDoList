@@ -6,7 +6,6 @@
        todoCompleted = document.querySelector('.todo-completed');
 
 let todoData = [];              
-todoData = JSON.parse(localStorage.getItem('array'));  
 
 const render = function() {
   todoList.textContent = '';
@@ -60,4 +59,5 @@ todoControl.addEventListener('submit', function(event){
       headerInput.value = '';
     }
   });
+  todoData = JSON.parse(localStorage.getItem('array'));  
   render();
